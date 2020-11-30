@@ -1,0 +1,7 @@
+config:
+  # 文件输出路径
+  optPutPath: D:\\
+  ip: 139.159.232.87
+  port: 3306
+  username: root
+  password: lubangtao_62361
