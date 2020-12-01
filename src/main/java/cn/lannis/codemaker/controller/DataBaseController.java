@@ -1,14 +1,17 @@
 package cn.lannis.codemaker.controller;
 
+import cn.lannis.codemaker.core.Result;
 import cn.lannis.codemaker.service.DataBaseServiceImpl;
 import cn.lannis.codemaker.vo.CanConnectRequestVo;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.Map;
 
 /**
  * <p>描述：数据库控制层</p>
@@ -23,7 +26,7 @@ public class DataBaseController {
     DataBaseServiceImpl dataBaseService;
 
     @PostMapping("canConnect")
-    public boolean canConnect(@RequestBody CanConnectRequestVo canConnectRequestVo){
-        return  dataBaseService.canConnect(canConnectRequestVo);
+    public Result<Map<String, Object>> canConnect(@RequestBody CanConnectRequestVo canConnectRequestVo, Model model){
+        return dataBaseService.canConnect(canConnectRequestVo,model);
     }
 }
