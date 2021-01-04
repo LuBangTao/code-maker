@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--日志级别以及优先级排序: OFF > FATAL > ERROR > WARN > INFO > DEBUG > TRACE > ALL -->
+<!--Configuration后面的status,这个用于设置log4j2自身内部的信息输出,可以不设置,当设置成trace时,你会看到log4j2内部各种详细输出-->
+<!--monitorInterval：Log4j能够自动检测修改配置 文件和重新配置本身,设置间隔秒数-->
+<Configuration status="warn" monitorInterval="1800">
+	<properties>
+		<!-- <property name="LOG_HOME">${sys:catalina.base}/logs/rivamed</property> -->
+		<property name="LOG_HOME">logs/lannis</property>
+		<property name="LOG_ALL_NAME">all</property>
+		<property name="LOG_RIVAMED_NAME">rivamed</property>
+		<property name="LOG_ERROE_NAME">error</property>
+		<property name="LOG_VISIT_NAME">visit</property>
+		<property name="LOG_HIBERNATE_NAME">hibernate</property>
+		<property name="LOG_MYBATIS_NAME">mybatis</property>
+		<property name="LOG_BUSINESS_NAME">business</property>
+
+		<property name="FILE_SIZE">20 MB</property>
+		<property name="FILE_MAX_NUM">100</property>
+	</properties>
+
+	<Appenders>
+		<!-- 定义控制台输出 -->
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss} [%p] %l \: %m%n" />
+		</Console>
+		<!-- 所有日志输出 -->
+		<RollingRandomAccessFile name="AllFile" fileName="${LOG_HOME}/${LOG_ALL_NAME}.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/${LOG_ALL_NAME}-%d{yyyy-MM-dd}-%i.log.gz">
+			<PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss} [%p] %l \: %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+				<SizeBasedTriggeringPolicy size="${FILE_SIZE}" />
+			</Policies>
+			<!-- <DefaultRolloverStrategy max="${FILE_MAX_NUM}" /> -->
+			<!-- 删除7天前的日志 -->
+			<DefaultRolloverStrategy max="${FILE_MAX_NUM}">
+                <Delete basePath="${LOG_HOME}/$${date:yyyy-MM}/" maxDepth="2">
+                    <IfFileName glob="*.log.gz" />
+                    <IfLastModified age="7d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+		</RollingRandomAccessFile>
+		<!-- RIVAMED日志输出 -->
+		<RollingRandomAccessFile name="RivamedFile" fileName="${LOG_HOME}/${LOG_RIVAMED_NAME}.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/${LOG_RIVAMED_NAME}-%d{yyyy-MM-dd}-%i.log.gz">
+			<PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss} [%p] %l \: %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+				<SizeBasedTriggeringPolicy size="${FILE_SIZE}" />
+			</Policies>
+			<!-- <DefaultRolloverStrategy max="${FILE_MAX_NUM}" /> -->
+			<!-- 删除7天前的日志 -->
+			<DefaultRolloverStrategy max="${FILE_MAX_NUM}">
+                <Delete basePath="${LOG_HOME}/$${date:yyyy-MM}/" maxDepth="2">
+                    <IfFileName glob="*.log.gz" />
+                    <IfLastModified age="7d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+		</RollingRandomAccessFile>
+		<!-- 错误日志输出 -->
+		<RollingRandomAccessFile name="ErrorFile" fileName="${LOG_HOME}/${LOG_ERROE_NAME}.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/${LOG_ERROE_NAME}-%d{yyyy-MM-dd}-%i.log.gz">
+			<PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss} [%p] %l \: %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+				<SizeBasedTriggeringPolicy size="${FILE_SIZE}" />
+			</Policies>
+			<!-- <DefaultRolloverStrategy max="${FILE_MAX_NUM}" /> -->
+			<!-- 删除7天前的日志 -->
+			<DefaultRolloverStrategy max="${FILE_MAX_NUM}">
+                <Delete basePath="${LOG_HOME}/$${date:yyyy-MM}/" maxDepth="2">
+                    <IfFileName glob="*.log.gz" />
+                    <IfLastModified age="7d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+			<Filters>
+				<ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY" />
+			</Filters>
+		</RollingRandomAccessFile>
+		<!-- Visit日志输出 -->
+		<RollingRandomAccessFile name="VisitFile" fileName="${LOG_HOME}/${LOG_VISIT_NAME}.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/${LOG_VISIT_NAME}-%d{yyyy-MM-dd}-%i.log.gz">
+			<PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss} [%p] %l \: %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+				<SizeBasedTriggeringPolicy size="${FILE_SIZE}" />
+			</Policies>
+			<!-- <DefaultRolloverStrategy max="${FILE_MAX_NUM}" /> -->
+			<!-- 删除7天前的日志 -->
+			<DefaultRolloverStrategy max="${FILE_MAX_NUM}">
+                <Delete basePath="${LOG_HOME}/$${date:yyyy-MM}/" maxDepth="2">
+                    <IfFileName glob="*.log.gz" />
+                    <IfLastModified age="7d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+		</RollingRandomAccessFile>
+		<!-- Hibernate日志输出 -->
+		<RollingRandomAccessFile name="HibernateFile" fileName="${LOG_HOME}/${LOG_HIBERNATE_NAME}.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/${LOG_HIBERNATE_NAME}-%d{yyyy-MM-dd}-%i.log.gz">
+			<PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss} [%p] %l \: %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+				<SizeBasedTriggeringPolicy size="${FILE_SIZE}" />
+			</Policies>
+			<!-- <DefaultRolloverStrategy max="${FILE_MAX_NUM}" /> -->
+			<!-- 删除7天前的日志 -->
+			<DefaultRolloverStrategy max="${FILE_MAX_NUM}">
+                <Delete basePath="${LOG_HOME}/$${date:yyyy-MM}/" maxDepth="2">
+                    <IfFileName glob="*.log.gz" />
+                    <IfLastModified age="7d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+		</RollingRandomAccessFile>
+		<!-- Mybatis日志输出 -->
+		<RollingRandomAccessFile name="MybatisFile" fileName="${LOG_HOME}/${LOG_MYBATIS_NAME}.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/${LOG_MYBATIS_NAME}-%d{yyyy-MM-dd}-%i.log.gz">
+			<PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss} [%p] %l \: %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+				<SizeBasedTriggeringPolicy size="${FILE_SIZE}" />
+			</Policies>
+			<!-- <DefaultRolloverStrategy max="${FILE_MAX_NUM}" /> -->
+			<!-- 删除7天前的日志 -->
+			<DefaultRolloverStrategy max="${FILE_MAX_NUM}">
+                <Delete basePath="${LOG_HOME}/$${date:yyyy-MM}/" maxDepth="2">
+                    <IfFileName glob="*.log.gz" />
+                    <IfLastModified age="7d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+		</RollingRandomAccessFile>
+		<!-- Business日志输出 -->
+		<RollingRandomAccessFile name="BusinessFile" fileName="${LOG_HOME}/${LOG_BUSINESS_NAME}.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/${LOG_BUSINESS_NAME}-%d{yyyy-MM-dd}-%i.log.gz">
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+				<SizeBasedTriggeringPolicy size="${FILE_SIZE}" />
+			</Policies>
+			<!-- <DefaultRolloverStrategy max="${FILE_MAX_NUM}" /> -->
+			<!-- 删除7天前的日志 -->
+			<DefaultRolloverStrategy max="${FILE_MAX_NUM}">
+                <Delete basePath="${LOG_HOME}/$${date:yyyy-MM}/" maxDepth="2">
+                    <IfFileName glob="*.log.gz" />
+                    <IfLastModified age="7d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+		</RollingRandomAccessFile>
+	</Appenders>
+
+	<Loggers>
+<!--		<Logger name="cn.rivamed.framework.log.builder.BusinessLogBuilder" level="INFO" additivity="false">-->
+<!--			<AppenderRef ref="BusinessFile" />-->
+<!--		</Logger>-->
+<!--		<Logger name="cn.rivamed.framework.web.context.filter.TraceFilter" level="INFO" additivity="false">-->
+<!--			<AppenderRef ref="VisitFile" />-->
+<!--		</Logger>-->
+<!--		<Logger name="cn.rivamed" level="INFO" additivity="false">-->
+<!--			<AppenderRef ref="RivamedFile" />-->
+<!--			<AppenderRef ref="Console" />-->
+<!--		</Logger>-->
+<!--		<Logger name="org.hibernate" level="INFO" additivity="false">-->
+<!--			<AppenderRef ref="HibernateFile" />-->
+<!--			&lt;!&ndash; <AppenderRef ref="Console" /> &ndash;&gt;-->
+<!--		</Logger>-->
+<!--		<Logger name="org.mybatis" level="INFO" additivity="false">-->
+<!--			<AppenderRef ref="MybatisFile" />-->
+<!--		</Logger>-->
+
+		<!-- 调试权限验证时使用 -->
+		<!-- <Logger name="cn.rivamed.framework.web.security" level="DEBUG" additivity="false">
+			<AppenderRef ref="Console" />
+		</Logger> -->
+
+		<Root level="INFO">
+			<AppenderRef ref="ErrorFile" />
+			<AppenderRef ref="AllFile" />
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+</Configuration>

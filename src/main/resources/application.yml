@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8088
 spring:
   thymeleaf:
     cache: false #是否启用缓存，开发环境设为false

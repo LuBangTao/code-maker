@@ -1,0 +1,39 @@
+package ${basePackageName}.${packageName}.entity;
+
+import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
+/**
+ * <p>描述：实体类</p>
+ * <p>公司：成都瑞华康源科技有限公司</p>
+ * <p>作者：鲁帮涛</p>
+ * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
+ * <p>版权：RivaMed-2021</p>
+ */
+@Data
+@TableName("${tableName}")
+public class ${entityName?cap_first} implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    <#list columnInfos as po>
+	/**${po.columnComment}*/
+	<#if po.columnKey == 'pri'>
+	@TableId(type = IdType.UUID)
+	</#if>
+  <#if po.dataType =='java.util.Date'>
+	<#if po.dataDBType =='date'>
+	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+	<#elseif po.dataDBType =='datetime'>
+	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	</#if>
+  </#if>
+	private <#if po.dataType=='java.sql.Blob'>byte[]<#else>${po.dataType}</#if> ${po.columnName};
+	</#list>
+}

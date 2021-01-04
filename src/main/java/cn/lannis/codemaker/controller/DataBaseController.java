@@ -3,6 +3,7 @@ package cn.lannis.codemaker.controller;
 import cn.lannis.codemaker.core.Result;
 import cn.lannis.codemaker.service.DataBaseServiceImpl;
 import cn.lannis.codemaker.vo.CanConnectRequestVo;
+import cn.lannis.codemaker.vo.GenerateRequestVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,5 +29,15 @@ public class DataBaseController {
     @PostMapping("canConnect")
     public Result<Map<String, Object>> canConnect(@RequestBody CanConnectRequestVo canConnectRequestVo, Model model){
         return dataBaseService.canConnect(canConnectRequestVo,model);
+    }
+
+    @PostMapping("getTables")
+    public Result<Map<String, Object>> getTables(@RequestBody CanConnectRequestVo canConnectRequestVo, Model model){
+        return dataBaseService.getTables(canConnectRequestVo,model);
+    }
+
+    @PostMapping("generate")
+    public Result<String> generate(@RequestBody GenerateRequestVo generateRequestVo){
+        return dataBaseService.generate(generateRequestVo);
     }
 }

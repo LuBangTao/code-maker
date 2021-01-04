@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="${basePackageName}.${packageName}.mapper.${entityName?cap_first}Mapper">
+    <!--通用查询结果-->
+    <resultMap id="BaseResultMap" type="${basePackageName}.${packageName}.entity.${entityName?cap_first}">
+        <#list columnInfos as po>
+        <#if po.columnKey == 'pri'>
+        <id column="${po.originColumnName}" property="${po.columnName}" jdbcType="${po.dataDBType}" />
+        </#if>
+        </#list>
+        <#list columnInfos as po>
+        <#if po.columnKey != 'pri'>
+        <id column="${po.originColumnName}" property="${po.columnName}" jdbcType="${po.dataDBType}" />
+        </#if>
+        </#list>
+    </resultMap>
+</mapper>

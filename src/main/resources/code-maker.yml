@@ -1,7 +1,19 @@
 config:
   # 文件输出路径
-  optPutPath: D:\\
+  optPutPath: D:/
   ip: 139.159.232.87
   port: 3306
   username: root1
   password: lubangtao_6236
+#  projectPath: D:/temp
+  applicationPath: /src/main/java/cn/lannis/codemaker
+  controllerPath: /controller/
+  entityPath: /entity/
+  servicePath: /service/
+  serviceImplPath: /service/impl/
+  mapperPath: /mapper/
+  mapperXmlPath: /mapper/xml/
+  # 数据库字段下划线转驼峰
+  underLineToCamel: true
+  # 模板文件地址
+  templatePath: /lannis

@@ -1,6 +1,6 @@
 package cn.lannis.codemaker.controller;
 
-import cn.lannis.codemaker.core.CodeMakerConfig;
+import cn.lannis.codemaker.configure.CodeMakerConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,10 +20,16 @@ public class PageController {
     @Resource
     CodeMakerConfig codeMakerConfig;
 
+    @GetMapping("/")
+    public String toIndex(Model model){
+        log.info("{}",codeMakerConfig);
+        model.addAttribute("baseConfig",codeMakerConfig);
+        return "index";
+    }
     @GetMapping("/{view}.html")
     public String toPage(@PathVariable("view")String view,Model model){
         log.info("{}",codeMakerConfig);
-        model.addAttribute("test",codeMakerConfig);
+        model.addAttribute("baseConfig",codeMakerConfig);
         return view;
     }
 }
