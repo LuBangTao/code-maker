@@ -8,7 +8,7 @@ import ${basePackageName}.${packageName}.dto.${entityName}.${entityName?cap_firs
 import ${basePackageName}.${packageName}.dto.${entityName}.${entityName?cap_first}ListPageDto;
 import ${basePackageName}.${packageName}.dto.${entityName}.${entityName?cap_first}ListSimpleDto;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import cn.rivamed.irsmartor.common.Response;
+import cn.Lannis.irsmartor.common.Response;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +22,7 @@ import java.util.List;
   * <p>公司：Lannis©2021 All Rights Reserved</p>
   * <p>作者：鲁帮涛</p>
   * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
-  * <p>版权：RivaMed-2021</p>
+  * <p>版权：Lannis-2021</p>
   */
 @RestController
 @RequestMapping("/${packageName}/${entityName?uncap_first}")
@@ -36,7 +36,7 @@ public class ${entityName?cap_first}Rest{
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
     @PostMapping("save${entityName?cap_first}")
     public Response<String> save${entityName?cap_first}(@RequestBody ${entityName?cap_first}SaveDto ${entityName?uncap_first}SaveDto){
@@ -47,7 +47,7 @@ public class ${entityName?cap_first}Rest{
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
     @PostMapping("listSimple")
     public Response<List<${entityName?cap_first}>> listSimple(@RequestBody ${entityName?cap_first}ListSimpleDto ${entityName?uncap_first}ListSimpleDto){
@@ -58,7 +58,7 @@ public class ${entityName?cap_first}Rest{
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
     @PostMapping("listPage")
     public Response<Page<${entityName?cap_first}>> listPage(@RequestBody ${entityName?cap_first}ListPageDto ${entityName?uncap_first}ListPageDto){
@@ -69,7 +69,7 @@ public class ${entityName?cap_first}Rest{
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
     @PostMapping("update${entityName?cap_first}")
     public Response<Page<${entityName?cap_first}>> update${entityName?cap_first}(@RequestBody ${entityName?cap_first}UpdateDto ${entityName?uncap_first}UpdateDto){
@@ -80,7 +80,7 @@ public class ${entityName?cap_first}Rest{
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
     @PostMapping("remove${entityName?cap_first}")
     public Response<Page<${entityName?cap_first}>> update${entityName?cap_first}(@RequestBody ${entityName?cap_first}RemoveDto ${entityName?uncap_first}RemoveDto){

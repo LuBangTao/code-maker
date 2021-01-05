@@ -15,7 +15,7 @@ import java.util.List;
  * <p>公司：Lannis©2021 All Rights Reserved</p>
  * <p>作者：鲁帮涛</p>
  * <p>日期：2020-12-02 15:42</p>
- * <p>版权：RivaMed-2021</p>
+ * <p>版权：Lannis-2021</p>
  */
 @Slf4j
 @Component
@@ -33,7 +33,7 @@ public class FileUtil {
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2020-12-02 15:46</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
     public void initFilePath(List<String> filePaths) {
         for (String path:filePaths){
@@ -49,7 +49,7 @@ public class FileUtil {
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2020-12-02 16:15</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
     public void getTemplateRootDirs(String path){
         URL resource = getClass().getResource(path);
@@ -62,7 +62,7 @@ public class FileUtil {
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2021-01-04 10:41</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
     private void setTemplateRootDirs(File... templateRootDirs) {
         tempConfig.setTemplateRootDirs(Arrays.asList(templateRootDirs));

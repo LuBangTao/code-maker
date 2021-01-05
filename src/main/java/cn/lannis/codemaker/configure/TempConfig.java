@@ -14,7 +14,7 @@ import java.util.Map;
  * <p>公司：Lannis©2021 All Rights Reserved</p>
  * <p>作者：鲁帮涛</p>
  * <p>日期：2021-01-04 10:36</p>
- * <p>版权：RivaMed-2021</p>
+ * <p>版权：Lannis-2021</p>
  */
 @Component
 @Data

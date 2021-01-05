@@ -4,10 +4,10 @@
 <!--monitorInterval：Log4j能够自动检测修改配置 文件和重新配置本身,设置间隔秒数-->
 <Configuration status="warn" monitorInterval="1800">
 	<properties>
-		<!-- <property name="LOG_HOME">${sys:catalina.base}/logs/rivamed</property> -->
+		<!-- <property name="LOG_HOME">${sys:catalina.base}/logs/Lannis</property> -->
 		<property name="LOG_HOME">logs/lannis</property>
 		<property name="LOG_ALL_NAME">all</property>
-		<property name="LOG_RIVAMED_NAME">rivamed</property>
+		<property name="LOG_Lannis_NAME">Lannis</property>
 		<property name="LOG_ERROE_NAME">error</property>
 		<property name="LOG_VISIT_NAME">visit</property>
 		<property name="LOG_HIBERNATE_NAME">hibernate</property>
@@ -40,9 +40,9 @@
                 </Delete>
             </DefaultRolloverStrategy>
 		</RollingRandomAccessFile>
-		<!-- RIVAMED日志输出 -->
-		<RollingRandomAccessFile name="RivamedFile" fileName="${LOG_HOME}/${LOG_RIVAMED_NAME}.log"
-			filePattern="${LOG_HOME}/$${date:yyyy-MM}/${LOG_RIVAMED_NAME}-%d{yyyy-MM-dd}-%i.log.gz">
+		<!-- Lannis日志输出 -->
+		<RollingRandomAccessFile name="LannisFile" fileName="${LOG_HOME}/${LOG_Lannis_NAME}.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/${LOG_Lannis_NAME}-%d{yyyy-MM-dd}-%i.log.gz">
 			<PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss} [%p] %l \: %m%n" />
 			<Policies>
 				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
@@ -147,14 +147,14 @@
 	</Appenders>
 
 	<Loggers>
-<!--		<Logger name="cn.rivamed.framework.log.builder.BusinessLogBuilder" level="INFO" additivity="false">-->
+<!--		<Logger name="cn.Lannis.framework.log.builder.BusinessLogBuilder" level="INFO" additivity="false">-->
 <!--			<AppenderRef ref="BusinessFile" />-->
 <!--		</Logger>-->
-<!--		<Logger name="cn.rivamed.framework.web.context.filter.TraceFilter" level="INFO" additivity="false">-->
+<!--		<Logger name="cn.Lannis.framework.web.context.filter.TraceFilter" level="INFO" additivity="false">-->
 <!--			<AppenderRef ref="VisitFile" />-->
 <!--		</Logger>-->
-<!--		<Logger name="cn.rivamed" level="INFO" additivity="false">-->
-<!--			<AppenderRef ref="RivamedFile" />-->
+<!--		<Logger name="cn.Lannis" level="INFO" additivity="false">-->
+<!--			<AppenderRef ref="LannisFile" />-->
 <!--			<AppenderRef ref="Console" />-->
 <!--		</Logger>-->
 <!--		<Logger name="org.hibernate" level="INFO" additivity="false">-->
@@ -166,7 +166,7 @@
 <!--		</Logger>-->
 
 		<!-- 调试权限验证时使用 -->
-		<!-- <Logger name="cn.rivamed.framework.web.security" level="DEBUG" additivity="false">
+		<!-- <Logger name="cn.Lannis.framework.web.security" level="DEBUG" additivity="false">
 			<AppenderRef ref="Console" />
 		</Logger> -->
 

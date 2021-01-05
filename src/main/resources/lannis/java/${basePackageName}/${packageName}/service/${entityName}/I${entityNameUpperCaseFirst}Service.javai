@@ -12,7 +12,7 @@ import java.util.List;
   * <p>公司：Lannis©2021 All Rights Reserved</p>
   * <p>作者：鲁帮涛</p>
   * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
-  * <p>版权：RivaMed-2021</p>
+  * <p>版权：Lannis-2021</p>
   */
 public interface I${entityName?cap_first}Service extends IService<${entityName?cap_first}> {
     /**
@@ -20,7 +20,7 @@ public interface I${entityName?cap_first}Service extends IService<${entityName?c
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
      boolean save${entityName?cap_first}(${entityName?cap_first} ${entityName?uncap_first});
     /**
@@ -28,7 +28,7 @@ public interface I${entityName?cap_first}Service extends IService<${entityName?c
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
      List<${entityName?cap_first}> listSimple(${entityName?cap_first} ${entityName?uncap_first});
     /**
@@ -36,7 +36,7 @@ public interface I${entityName?cap_first}Service extends IService<${entityName?c
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
     IPage<${entityName?cap_first}> listPage(Page<${entityName?cap_first}> page, ${entityName?cap_first} ${entityName?uncap_first});
     /**
@@ -44,7 +44,7 @@ public interface I${entityName?cap_first}Service extends IService<${entityName?c
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
      boolean update${entityName?cap_first}(${entityName?cap_first} ${entityName?uncap_first});
     /**
@@ -52,7 +52,7 @@ public interface I${entityName?cap_first}Service extends IService<${entityName?c
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
      boolean remove${entityName?cap_first}(${entityName?cap_first} ${entityName?uncap_first});
 }

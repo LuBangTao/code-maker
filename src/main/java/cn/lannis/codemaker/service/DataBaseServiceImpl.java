@@ -52,7 +52,7 @@ public class DataBaseServiceImpl {
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2020-12-02 13:24</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
     public Result<Map<String, Object>> canConnect(CanConnectRequestVo canConnectRequestVo, Model model) {
         try (Connection connection = DriverManager.getConnection(canConnectRequestVo.getUrl(), canConnectRequestVo.getUsername(), canConnectRequestVo.getPassword())) {
@@ -75,7 +75,7 @@ public class DataBaseServiceImpl {
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2020-12-01 11:11</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
     private List<SelectTwo> getAllDatabaseNames(Connection connection) throws SQLException {
         List<SelectTwo> databaseName = new ArrayList<>();
@@ -124,7 +124,7 @@ public class DataBaseServiceImpl {
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2020-12-02 13:24</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
     private List<SelectTwo> getAllTables(String databaseName) throws SQLException {
         List<SelectTwo> tableNames = new ArrayList<>();
@@ -167,7 +167,7 @@ public class DataBaseServiceImpl {
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2021-01-04 10:25</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
     public Result<String> generate(GenerateRequestVo generateRequestVo){
         try{
@@ -218,7 +218,7 @@ public class DataBaseServiceImpl {
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2021-01-04 13:51</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
     private boolean fillTableFieldInfo(GenerateRequestVo generateRequestVo) {
         List<ColumnInfoVo> columnInfoVos = dbUtil.readTableFields(generateRequestVo.getDatabaseName(), generateRequestVo.getTableName());
@@ -249,7 +249,7 @@ public class DataBaseServiceImpl {
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2021-01-04 11:10</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
     private void executeGenerate(File templateRootDir, File srcFile) {
         log.info("【当前文件临时根路径】:{}" , templateRootDir.getPath());
@@ -298,7 +298,7 @@ public class DataBaseServiceImpl {
      * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2021-01-04 12:22</p>
-     * <p>版权：RivaMed-2021</p>
+     * <p>版权：Lannis-2021</p>
      */
     private void splitFile(File file, String splitStr) {
         InputStreamReader isr = null;

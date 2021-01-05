@@ -7,7 +7,7 @@ import lombok.Data;
  * <p>公司：Lannis©2021 All Rights Reserved</p>
  * <p>作者：鲁帮涛</p>
  * <p>日期：2020-12-02 13:45</p>
- * <p>版权：RivaMed-2021</p>
+ * <p>版权：Lannis-2021</p>
  */
 @Data
 public class ColumnInfoVo {

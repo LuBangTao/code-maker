@@ -8,7 +8,7 @@ import lombok.Setter;
  * <p>公司：Lannis©2021 All Rights Reserved</p>
  * <p>作者：鲁帮涛</p>
  * <p>日期：2020-12-01 11:46</p>
- * <p>版权：RivaMed-2021</p>
+ * <p>版权：Lannis-2021</p>
  */
 public enum ResultCode {
     SUCCESS(1000,"操作成功"),
