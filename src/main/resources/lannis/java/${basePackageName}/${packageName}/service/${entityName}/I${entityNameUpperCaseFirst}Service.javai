@@ -9,7 +9,7 @@ import java.util.List;
 
  /**
   * <p>描述：服务接口层</p>
-  * <p>公司：成都瑞华康源科技有限公司</p>
+  * <p>公司：Lannis©2021 All Rights Reserved</p>
   * <p>作者：鲁帮涛</p>
   * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
   * <p>版权：RivaMed-2021</p>
@@ -17,7 +17,7 @@ import java.util.List;
 public interface I${entityName?cap_first}Service extends IService<${entityName?cap_first}> {
     /**
      * <p>描述：增加接口</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
      * <p>版权：RivaMed-2021</p>
@@ -25,7 +25,7 @@ public interface I${entityName?cap_first}Service extends IService<${entityName?c
      boolean save${entityName?cap_first}(${entityName?cap_first} ${entityName?uncap_first});
     /**
      * <p>描述：查询接口</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
      * <p>版权：RivaMed-2021</p>
@@ -33,7 +33,7 @@ public interface I${entityName?cap_first}Service extends IService<${entityName?c
      List<${entityName?cap_first}> listSimple(${entityName?cap_first} ${entityName?uncap_first});
     /**
      * <p>描述：分页查询接口</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
      * <p>版权：RivaMed-2021</p>
@@ -41,7 +41,7 @@ public interface I${entityName?cap_first}Service extends IService<${entityName?c
     IPage<${entityName?cap_first}> listPage(Page<${entityName?cap_first}> page, ${entityName?cap_first} ${entityName?uncap_first});
     /**
      * <p>描述：更新接口</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
      * <p>版权：RivaMed-2021</p>
@@ -49,7 +49,7 @@ public interface I${entityName?cap_first}Service extends IService<${entityName?c
      boolean update${entityName?cap_first}(${entityName?cap_first} ${entityName?uncap_first});
     /**
      * <p>描述：删除查询接口</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
      * <p>版权：RivaMed-2021</p>

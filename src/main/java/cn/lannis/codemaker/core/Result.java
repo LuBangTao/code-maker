@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  * <p>描述：统一返回对象</p>
- * <p>公司：成都瑞华康源科技有限公司</p>
+ * <p>公司：Lannis©2021 All Rights Reserved</p>
  * <p>作者：鲁帮涛</p>
  * <p>日期：2020-12-01 11:38</p>
  * <p>版权：RivaMed-2021</p>

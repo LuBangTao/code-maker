@@ -49,7 +49,7 @@ public class DataBaseServiceImpl {
 
     /**
      * <p>描述：判断连接是否可用</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2020-12-02 13:24</p>
      * <p>版权：RivaMed-2021</p>
@@ -72,7 +72,7 @@ public class DataBaseServiceImpl {
     }
     /**
      * <p>描述：获取所有数据库名</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2020-12-01 11:11</p>
      * <p>版权：RivaMed-2021</p>
@@ -121,7 +121,7 @@ public class DataBaseServiceImpl {
     }
     /**
      * <p>描述：获取指定数据库下面的所有表名</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2020-12-02 13:24</p>
      * <p>版权：RivaMed-2021</p>
@@ -164,7 +164,7 @@ public class DataBaseServiceImpl {
 
     /**
      * <p>描述：代码生成</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2021-01-04 10:25</p>
      * <p>版权：RivaMed-2021</p>
@@ -215,7 +215,7 @@ public class DataBaseServiceImpl {
 
     /**
      * <p>描述：填充表字段信息</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2021-01-04 13:51</p>
      * <p>版权：RivaMed-2021</p>
@@ -246,7 +246,7 @@ public class DataBaseServiceImpl {
 
     /**
      * <p>描述：执行模板代码生成</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2021-01-04 11:10</p>
      * <p>版权：RivaMed-2021</p>
@@ -295,7 +295,7 @@ public class DataBaseServiceImpl {
 
     /**
      * <p>描述：分割文件</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2021-01-04 12:22</p>
      * <p>版权：RivaMed-2021</p>

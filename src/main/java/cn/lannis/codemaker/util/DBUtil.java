@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * <p>描述：数据库读取工具类</p>
- * <p>公司：成都瑞华康源科技有限公司</p>
+ * <p>公司：Lannis©2021 All Rights Reserved</p>
  * <p>作者：鲁帮涛</p>
  * <p>日期：2020-12-02 13:52</p>
  * <p>版权：RivaMed-2021</p>
@@ -33,7 +33,7 @@ public class DBUtil {
 
     /**
      * <p>描述：获取表字段</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2020-12-02 13:54</p>
      * <p>版权：RivaMed-2021</p>
@@ -76,7 +76,7 @@ public class DBUtil {
 
     /**
      * <p>描述：下划线转驼峰</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2020-12-02 15:16</p>
      * <p>版权：RivaMed-2021</p>
@@ -99,7 +99,7 @@ public class DBUtil {
     }
     /**
      * <p>描述：格式化数据类型</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2021-01-04 14:31</p>
      * <p>版权：RivaMed-2021</p>

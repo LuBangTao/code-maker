@@ -16,7 +16,7 @@ import javax.annotation.Resource;
 import java.util.List;
 /**
  * <p>描述：业务逻辑处理层</p>
- * <p>公司：成都瑞华康源科技有限公司</p>
+ * <p>公司：Lannis©2021 All Rights Reserved</p>
  * <p>作者：鲁帮涛</p>
  * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
  * <p>版权：RivaMed-2021</p>
@@ -28,7 +28,7 @@ public class ${entityName?cap_first}Blh {
     I${entityName?cap_first}Service ${entityName?uncap_first}Service;
     /**
      * <p>描述：增加接口</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
      * <p>版权：RivaMed-2021</p>
@@ -43,7 +43,7 @@ public class ${entityName?cap_first}Blh {
     }
     /**
      * <p>描述：查询列表接口</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
      * <p>版权：RivaMed-2021</p>
@@ -56,7 +56,7 @@ public class ${entityName?cap_first}Blh {
 
     /**
      * <p>描述：分页列表查询</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
      * <p>版权：RivaMed-2021</p>
@@ -74,7 +74,7 @@ public class ${entityName?cap_first}Blh {
     }
     /**
      * <p>描述：更新接口</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
      * <p>版权：RivaMed-2021</p>
@@ -90,7 +90,7 @@ public class ${entityName?cap_first}Blh {
     }
     /**
      * <p>描述：删除接口</p>
-     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>公司：Lannis©2021 All Rights Reserved</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
      * <p>版权：RivaMed-2021</p>

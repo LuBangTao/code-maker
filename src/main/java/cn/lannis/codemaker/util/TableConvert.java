@@ -5,7 +5,7 @@ import org.springframework.util.StringUtils;
 
 /**
  * <p>描述：表转换相关工具类</p>
- * <p>公司：成都瑞华康源科技有限公司</p>
+ * <p>公司：Lannis©2021 All Rights Reserved</p>
  * <p>作者：鲁帮涛</p>
  * <p>日期：2021-01-04 14:37</p>
  * <p>版权：RivaMed-2021</p>
