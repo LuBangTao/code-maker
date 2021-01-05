@@ -52,7 +52,7 @@ public class DataBaseServiceImpl {
      * <p>公司：成都瑞华康源科技有限公司</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2020-12-02 13:24</p>
-     * <p>版权：RivaMed-2020</p>
+     * <p>版权：RivaMed-2021</p>
      */
     public Result<Map<String, Object>> canConnect(CanConnectRequestVo canConnectRequestVo, Model model) {
         try (Connection connection = DriverManager.getConnection(canConnectRequestVo.getUrl(), canConnectRequestVo.getUsername(), canConnectRequestVo.getPassword())) {
@@ -75,7 +75,7 @@ public class DataBaseServiceImpl {
      * <p>公司：成都瑞华康源科技有限公司</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2020-12-01 11:11</p>
-     * <p>版权：RivaMed-2020</p>
+     * <p>版权：RivaMed-2021</p>
      */
     private List<SelectTwo> getAllDatabaseNames(Connection connection) throws SQLException {
         List<SelectTwo> databaseName = new ArrayList<>();
@@ -124,7 +124,7 @@ public class DataBaseServiceImpl {
      * <p>公司：成都瑞华康源科技有限公司</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2020-12-02 13:24</p>
-     * <p>版权：RivaMed-2020</p>
+     * <p>版权：RivaMed-2021</p>
      */
     private List<SelectTwo> getAllTables(String databaseName) throws SQLException {
         List<SelectTwo> tableNames = new ArrayList<>();
@@ -167,7 +167,7 @@ public class DataBaseServiceImpl {
      * <p>公司：成都瑞华康源科技有限公司</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2021-01-04 10:25</p>
-     * <p>版权：RivaMed-2020</p>
+     * <p>版权：RivaMed-2021</p>
      */
     public Result<String> generate(GenerateRequestVo generateRequestVo){
         try{
@@ -175,19 +175,19 @@ public class DataBaseServiceImpl {
             if(!initTempData(generateRequestVo)){
                 return ResultUtil.fail("代码生成失败，表字段信息处理失败");
             }
-            //文件路径检查
-            List<String> filePaths = new ArrayList<>();
-            String applicationPath = codeMakerConfig.getProjectPath()+codeMakerConfig.getApplicationPath();
-            filePaths.add(applicationPath);
-            filePaths.add(applicationPath+codeMakerConfig.getControllerPath());
-            filePaths.add(applicationPath+codeMakerConfig.getEntityPath());
-            filePaths.add(applicationPath+codeMakerConfig.getMapperPath());
-            filePaths.add(applicationPath+codeMakerConfig.getServiceImplPath());
-            filePaths.add(applicationPath+codeMakerConfig.getServicePath());
-            filePaths.add(applicationPath+codeMakerConfig.getMapperXmlPath());
-            filePaths.add(applicationPath+codeMakerConfig.getVoPath());
-            filePaths.add(applicationPath+codeMakerConfig.getDtoPath());
-            fileUtil.initFilePath(filePaths);
+//            //文件路径检查
+//            List<String> filePaths = new ArrayList<>();
+//            String applicationPath = codeMakerConfig.getProjectPath()+codeMakerConfig.getApplicationPath();
+//            filePaths.add(applicationPath);
+//            filePaths.add(applicationPath+codeMakerConfig.getControllerPath());
+//            filePaths.add(applicationPath+codeMakerConfig.getEntityPath());
+//            filePaths.add(applicationPath+codeMakerConfig.getMapperPath());
+//            filePaths.add(applicationPath+codeMakerConfig.getServiceImplPath());
+//            filePaths.add(applicationPath+codeMakerConfig.getServicePath());
+//            filePaths.add(applicationPath+codeMakerConfig.getMapperXmlPath());
+//            filePaths.add(applicationPath+codeMakerConfig.getVoPath());
+//            filePaths.add(applicationPath+codeMakerConfig.getDtoPath());
+//            fileUtil.initFilePath(filePaths);
             //获取模板文件
             fileUtil.getTemplateRootDirs(codeMakerConfig.getTemplatePath());
             log.info("模板配置：{}",tempConfig);
@@ -203,10 +203,11 @@ public class DataBaseServiceImpl {
     }
 
     private boolean initTempData(GenerateRequestVo generateRequestVo) {
-        tempConfig.getData().put("basePackageName",StringUtils.isEmpty(generateRequestVo.getBasePackageName())?"cn.lannis.server.one":generateRequestVo.getBasePackageName());
-        tempConfig.getData().put("packageName", StringUtils.isEmpty(generateRequestVo.getPackageName())?"sys":generateRequestVo.getPackageName());
-        tempConfig.getData().put("entityName",StringUtils.isEmpty(generateRequestVo.getEntityName())?"Account":generateRequestVo.getEntityName());
-        tempConfig.getData().put("tableName",StringUtils.isEmpty(generateRequestVo.getTableName())?"emptyTableName":generateRequestVo.getTableName());
+        tempConfig.getData().put("basePackageName",StringUtils.isEmpty(generateRequestVo.getBasePackageName())?"cn.lannis.server.one":generateRequestVo.getBasePackageName().toLowerCase());
+        tempConfig.getData().put("packageName", StringUtils.isEmpty(generateRequestVo.getPackageName())?"sys":generateRequestVo.getPackageName().toLowerCase());
+        tempConfig.getData().put("entityName",StringUtils.isEmpty(generateRequestVo.getEntityName())?"account":generateRequestVo.getEntityName().toLowerCase());
+        tempConfig.getData().put("entityNameUpperCaseFirst",StringUtils.isEmpty(generateRequestVo.getEntityName())?"Account":DBUtil.firstCharToUpperCase(generateRequestVo.getEntityName()));
+        tempConfig.getData().put("tableName",StringUtils.isEmpty(generateRequestVo.getTableName())?"emptyTableName":generateRequestVo.getTableName().toLowerCase());
         //填充表字段信息
         return fillTableFieldInfo(generateRequestVo);
 
@@ -217,7 +218,7 @@ public class DataBaseServiceImpl {
      * <p>公司：成都瑞华康源科技有限公司</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2021-01-04 13:51</p>
-     * <p>版权：RivaMed-2020</p>
+     * <p>版权：RivaMed-2021</p>
      */
     private boolean fillTableFieldInfo(GenerateRequestVo generateRequestVo) {
         List<ColumnInfoVo> columnInfoVos = dbUtil.readTableFields(generateRequestVo.getDatabaseName(), generateRequestVo.getTableName());
@@ -248,7 +249,7 @@ public class DataBaseServiceImpl {
      * <p>公司：成都瑞华康源科技有限公司</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2021-01-04 11:10</p>
-     * <p>版权：RivaMed-2020</p>
+     * <p>版权：RivaMed-2021</p>
      */
     private void executeGenerate(File templateRootDir, File srcFile) {
         log.info("【当前文件临时根路径】:{}" , templateRootDir.getPath());
@@ -297,7 +298,7 @@ public class DataBaseServiceImpl {
      * <p>公司：成都瑞华康源科技有限公司</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2021-01-04 12:22</p>
-     * <p>版权：RivaMed-2020</p>
+     * <p>版权：RivaMed-2021</p>
      */
     private void splitFile(File file, String splitStr) {
         InputStreamReader isr = null;
@@ -369,6 +370,7 @@ public class DataBaseServiceImpl {
         return file.getName().startsWith("[1-n]");
     }
 
+    //TODO 在这处理最终文件生成的位置
     private String processForOutputFilepath(String templateFile) {
         String outputFilePath = templateFile;
         try {

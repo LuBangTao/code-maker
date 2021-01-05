@@ -1,8 +1,8 @@
-package ${basePackageName}.${packageName}.mapper;
+package ${basePackageName}.${packageName}.mapper.${entityName};
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import ${basePackageName}.${packageName}.entity.${entityName?cap_first};
+import ${basePackageName}.${packageName}.entity.${entityName}.${entityName?cap_first};
 
 /**
  * <p>描述：Mapper接口层</p>

@@ -8,7 +8,7 @@ import org.springframework.util.StringUtils;
  * <p>公司：成都瑞华康源科技有限公司</p>
  * <p>作者：鲁帮涛</p>
  * <p>日期：2021-01-04 14:37</p>
- * <p>版权：RivaMed-2020</p>
+ * <p>版权：RivaMed-2021</p>
  */
 @Log4j2
 public class TableConvert {

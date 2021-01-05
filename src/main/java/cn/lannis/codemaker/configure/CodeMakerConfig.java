@@ -63,8 +63,10 @@ public class CodeMakerConfig {
     /**DTO路径*/
     @Value("${dtoPath:/dto}")
     private String dtoPath;
+    /**service路径*/
     @Value("${servicePath:/service}")
     private String servicePath;
+    /**serviceImpl路径*/
     @Value("${serviceImplPath:/service/impl}")
     private String serviceImplPath;
     @Value("${mapperPath:/mapper}")

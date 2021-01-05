@@ -1,0 +1,77 @@
+package ${basePackageName}.${packageName}.service.${entityName}.impl;
+
+import ${basePackageName}.${packageName}.entity.${entityName}.${entityName?cap_first};
+import ${basePackageName}.${packageName}.mapper.${entityName}.${entityName?cap_first}Mapper;
+import ${basePackageName}.${packageName}.service.${entityName}.I${entityName?cap_first}Service;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import lombok.extern.log4j.Log4j2;
+import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+
+import java.util.Calendar;
+import java.util.List;
+
+/**
+ * <p>描述：服务实现类</p>
+ * <p>公司：成都瑞华康源科技有限公司</p>
+ * <p>作者：鲁帮涛</p>
+ * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
+ * <p>版权：RivaMed-2021</p>
+ */
+@Service
+@Log4j2
+public class ${entityName?cap_first}ServiceImpl extends ServiceImpl<${entityName?cap_first}Mapper, ${entityName?cap_first}> implements I${entityName?cap_first}Service {
+
+    @Override
+    public boolean save${entityName?cap_first}(${entityName?cap_first} ${entityName?uncap_first}) {
+        return this.save(${entityName?uncap_first});
+    }
+
+    @Override
+    public List<${entityName?cap_first}> listSimple(${entityName?cap_first} ${entityName?uncap_first}) {
+        return this.list(listCondition(${entityName?uncap_first}));
+    }
+
+    @Override
+    public IPage<${entityName?cap_first}> listPage(Page<${entityName?cap_first}> page, ${entityName?cap_first} ${entityName?uncap_first}) {
+        return this.page(page,listCondition(${entityName?uncap_first}));
+    }
+
+    @Override
+    public boolean update${entityName?cap_first}(${entityName?cap_first} ${entityName?uncap_first}) {
+        <#list columnInfos as po>
+        <#if po.columnName=='updateTime'>
+        ${entityName?uncap_first}.setUpdateTime(Calendar.getInstance().getTime());
+        </#if>
+        </#list>
+        return this.updateById(${entityName?uncap_first});
+    }
+
+    @Override
+    public boolean remove${entityName?cap_first}(${entityName?cap_first} ${entityName?uncap_first}) {
+            <#list columnInfos as po>
+        	<#if po.columnKey == 'pri'>
+        	return this.removeById(${entityName?uncap_first}.get${po.columnName?cap_first}());
+        	</#if>
+        	</#list>
+    }
+
+    private LambdaQueryWrapper<${entityName?cap_first}> listCondition(${entityName?cap_first} ${entityName?uncap_first}) {
+        LambdaQueryWrapper<${entityName?cap_first}> ${entityName?uncap_first}LambdaQueryWrapper = new LambdaQueryWrapper<>();
+        <#list columnInfos as po>
+        <#if po.dataType=='java.lang.Integer'>
+        if(${entityName?uncap_first}.get${po.columnName?cap_first}()!=null){
+           ${entityName?uncap_first}LambdaQueryWrapper.eq(${entityName?cap_first}::get${po.columnName?cap_first},${entityName?uncap_first}.get${po.columnName?cap_first}());
+        }
+        <#else>
+        if(!StringUtils.isEmpty(${entityName?uncap_first}.get${po.columnName?cap_first}())){
+           ${entityName?uncap_first}LambdaQueryWrapper.eq(${entityName?cap_first}::get${po.columnName?cap_first},${entityName?uncap_first}.get${po.columnName?cap_first}());
+        }
+        </#if>
+        </#list>
+        return ${entityName?uncap_first}LambdaQueryWrapper;
+    }
+}

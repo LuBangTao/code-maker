@@ -17,7 +17,7 @@ import java.util.List;
  * <p>公司：成都瑞华康源科技有限公司</p>
  * <p>作者：鲁帮涛</p>
  * <p>日期：2020-12-02 13:52</p>
- * <p>版权：RivaMed-2020</p>
+ * <p>版权：RivaMed-2021</p>
  */
 @Component
 @Log4j2
@@ -36,7 +36,7 @@ public class DBUtil {
      * <p>公司：成都瑞华康源科技有限公司</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2020-12-02 13:54</p>
-     * <p>版权：RivaMed-2020</p>
+     * <p>版权：RivaMed-2021</p>
      */
     public List<ColumnInfoVo> readTableFields(String databaseName, String tableName) {
         List<ColumnInfoVo> columnInfoVos = new ArrayList<>();
@@ -79,7 +79,7 @@ public class DBUtil {
      * <p>公司：成都瑞华康源科技有限公司</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2020-12-02 15:16</p>
-     * <p>版权：RivaMed-2020</p>
+     * <p>版权：RivaMed-2021</p>
      */
     private String underLineToCamel(String field){
         String[] strs = field.split("_");
@@ -102,7 +102,7 @@ public class DBUtil {
      * <p>公司：成都瑞华康源科技有限公司</p>
      * <p>作者：鲁帮涛</p>
      * <p>日期：2021-01-04 14:31</p>
-     * <p>版权：RivaMed-2020</p>
+     * <p>版权：RivaMed-2021</p>
      */
     private static String formatDataType(String dataType, String precision, String scale) {
         if (dataType.contains("char")) {
@@ -138,4 +138,32 @@ public class DBUtil {
         }
         return dataType;
     }
+
+    /**首字母变大写*/
+    public static String firstCharToUpperCase(String str) {
+        if (StringUtils.isEmpty(str)){
+            return str;
+        }
+        char[]chars = str.toCharArray();
+        if ( chars[0] >= 'a' && chars[0] <= 'z'){
+            chars[0] -= 32;
+            return String.valueOf(chars);
+        }else {
+            return str;
+        }
+    }
+    /**首字母变小写*/
+    public static String firstCharToLowerCase(String str) {
+        if (StringUtils.isEmpty(str)){
+            return str;
+        }
+        char[]chars = str.toCharArray();
+        if ( chars[0] >= 'A' && chars[0] <= 'Z') {
+            chars[0] += 32;
+            return String.valueOf(chars);
+        }else {
+            return str;
+        }
+    }
+
 }

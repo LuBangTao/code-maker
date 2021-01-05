@@ -5,7 +5,7 @@ package cn.lannis.codemaker.core;
  * <p>公司：成都瑞华康源科技有限公司</p>
  * <p>作者：鲁帮涛</p>
  * <p>日期：2020-12-01 11:44</p>
- * <p>版权：RivaMed-2020</p>
+ * <p>版权：RivaMed-2021</p>
  */
 public class ResultUtil {
     ResultUtil(){}

@@ -1,0 +1,107 @@
+package ${basePackageName}.${packageName}.blh.${entityName?uncap_first};
+
+import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Component;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import ${basePackageName}.${packageName}.dto.${entityName}.${entityName?cap_first}SaveDto;
+import ${basePackageName}.${packageName}.dto.${entityName}.${entityName?cap_first}RemoveDto;
+import ${basePackageName}.${packageName}.dto.${entityName}.${entityName?cap_first}UpdateDto;
+import ${basePackageName}.${packageName}.dto.${entityName}.${entityName?cap_first}ListPageDto;
+import ${basePackageName}.${packageName}.dto.${entityName}.${entityName?cap_first}ListSimpleDto;
+import ${basePackageName}.${packageName}.entity.${entityName}.${entityName?cap_first};
+import ${basePackageName}.${packageName}.service.${entityName}.I${entityName?cap_first}Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+/**
+ * <p>描述：业务逻辑处理层</p>
+ * <p>公司：成都瑞华康源科技有限公司</p>
+ * <p>作者：鲁帮涛</p>
+ * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
+ * <p>版权：RivaMed-2021</p>
+ */
+@Component
+@Log4j2
+public class ${entityName?cap_first}Blh {
+    @Resource
+    I${entityName?cap_first}Service ${entityName?uncap_first}Service;
+    /**
+     * <p>描述：增加接口</p>
+     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>作者：鲁帮涛</p>
+     * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
+     * <p>版权：RivaMed-2021</p>
+     */
+    public Response<String> save${entityName?cap_first}(${entityName?cap_first}SaveDto ${entityName?uncap_first}SaveDto){
+        ${entityName?cap_first} ${entityName?uncap_first} = new ${entityName?cap_first}();
+        BeanUtils.copyProperties(${entityName?uncap_first}SaveDto,${entityName?uncap_first});
+        if(accountService.save${entityName?cap_first}(${entityName?uncap_first})){
+            return ResponseUtil.success(GlobleEnum.SYS_OPE_SUCCESS.getMessage());
+        };
+        return ResponseUtil.fail(GlobleEnum.SYS_OPE_FAILED.getCode(),GlobleEnum.SYS_OPE_FAILED.getMessage());
+    }
+    /**
+     * <p>描述：查询列表接口</p>
+     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>作者：鲁帮涛</p>
+     * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
+     * <p>版权：RivaMed-2021</p>
+     */
+    public Response<List<${entityName?cap_first}>> listSimple(${entityName?cap_first}ListSimpleDto ${entityName?uncap_first}ListSimpleDto){
+        ${entityName?cap_first} ${entityName?uncap_first} = new ${entityName?cap_first}();
+        BeanUtils.copyProperties(${entityName?uncap_first}ListSimpleDto,${entityName?uncap_first});
+        return ResponseUtil.success(${entityName?uncap_first}Service.listSimple(${entityName?uncap_first}));
+    }
+
+    /**
+     * <p>描述：分页列表查询</p>
+     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>作者：鲁帮涛</p>
+     * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
+     * <p>版权：RivaMed-2021</p>
+     */
+    public Response<Page<${entityName?cap_first}>> listPage(${entityName?cap_first}ListPageDto ${entityName?uncap_first}ListPageDto){
+        Page<${entityName?cap_first}> ${entityName?uncap_first}Page;
+        if(${entityName?uncap_first}ListPageDto.getPage() == null){
+            ${entityName?uncap_first}Page = new Page<>();
+        }else {
+            ${entityName?uncap_first}Page = new Page<>(${entityName?uncap_first}ListPageDto.getPage().getCurrent(),${entityName?uncap_first}ListPageDto.getPage().getSize());
+        }
+        ${entityName?cap_first} ${entityName?uncap_first} = new ${entityName?cap_first}();
+        BeanUtils.copyProperties(${entityName?uncap_first}ListPageDto,${entityName?uncap_first});
+        return ResponseUtil.success((Page<${entityName?cap_first}>)${entityName?uncap_first}Service.listPage(${entityName?uncap_first}Page,account));
+    }
+    /**
+     * <p>描述：更新接口</p>
+     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>作者：鲁帮涛</p>
+     * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
+     * <p>版权：RivaMed-2021</p>
+     */
+    public Response<Boolean> update${entityName?cap_first}(${entityName?cap_first}UpdateDto ${entityName?uncap_first}UpdateDto){
+        ${entityName?cap_first} ${entityName?uncap_first} = new ${entityName?cap_first}();
+        BeanUtils.copyProperties(${entityName?uncap_first}UpdateDto,${entityName?uncap_first});
+        if(accountService.update${entityName?cap_first}(${entityName?uncap_first})){
+            return ResponseUtil.success(true,GlobleEnum.SYS_OPE_SUCCESS.getCode(),GlobleEnum.SYS_OPE_SUCCESS.getMessage());
+        }else{
+            return ResponseUtil.fail(false,GlobleEnum.SYS_OPE_FAILED.getCode(),GlobleEnum.SYS_OPE_FAILED.getMessage());
+        }
+    }
+    /**
+     * <p>描述：删除接口</p>
+     * <p>公司：成都瑞华康源科技有限公司</p>
+     * <p>作者：鲁帮涛</p>
+     * <p>日期：${.now?string["yyyy-MM-dd HH:mm"]}</p>
+     * <p>版权：RivaMed-2021</p>
+     */
+    public Response<Boolean> remove${entityName?cap_first}(${entityName?cap_first}RemoveDto ${entityName?uncap_first}RemoveDto){
+        ${entityName?cap_first} ${entityName?uncap_first} = new ${entityName?cap_first}();
+        BeanUtils.copyProperties(${entityName?uncap_first}RemoveDto,${entityName?uncap_first});
+        if(accountService.remove${entityName?cap_first}(${entityName?uncap_first})){
+            return ResponseUtil.success(true,GlobleEnum.SYS_OPE_SUCCESS.getCode(),GlobleEnum.SYS_OPE_SUCCESS.getMessage());
+        }else{
+            return ResponseUtil.fail(false,GlobleEnum.SYS_OPE_FAILED.getCode(),GlobleEnum.SYS_OPE_FAILED.getMessage());
+        }
+    }
+}
